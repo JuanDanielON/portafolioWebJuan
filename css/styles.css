@@ -1,0 +1,236 @@
+/* Custom Styles for Portfolio */
+
+/* General Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --transition-speed: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 76px;
+    overflow-x: hidden;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.title-underline {
+    height: 4px;
+    width: 70px;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: calc(100vh - 76px);
+    background-color: var(--dark-color);
+    position: relative;
+}
+
+.profile-image {
+    max-width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-speed);
+}
+
+.profile-image:hover {
+    transform: translateY(-10px);
+}
+
+/* Language Level */
+.language-level {
+    display: flex;
+    margin: 0 10px;
+}
+
+.language-level span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    margin-right: 5px;
+}
+
+.language-level span.active {
+    background-color: var(--primary-color);
+}
+
+/* Social Icons */
+.social-icon {
+    color: var(--light-color);
+    transition: color var(--transition-speed);
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Skills Section */
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-item {
+    margin-bottom: 10px;
+}
+
+.hardware-icon {
+    color: var(--primary-color);
+    width: 50px;
+    text-align: center;
+}
+
+/* Experience Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    margin-left: -1.5px;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-badge {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 50px;
+    background-color: var(--primary-color);
+    color: #fff;
+    z-index: 100;
+}
+
+.timeline-panel {
+    width: 45%;
+    float: left;
+    border-radius: 8px;
+    transition: transform var(--transition-speed);
+}
+
+.timeline-panel:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-item:nth-child(even) .timeline-panel {
+    float: right;
+}
+
+.timeline-item:nth-child(odd) .timeline-panel {
+    margin-right: 55%;
+}
+
+/* Contact Section */
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.social-links .social-link {
+    color: var(--light-color);
+    font-size: 1.5rem;
+    transition: color var(--transition-speed);
+}
+
+.social-links .social-link:hover {
+    color: var(--primary-color);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Media Queries */
+@media (max-width: 991.98px) {
+    .timeline:before {
+        left: 40px;
+    }
+    
+    .timeline-badge {
+        left: 40px;
+        margin-left: 0;
+    }
+    
+    .timeline-panel {
+        width: calc(100% - 90px);
+        float: right !important;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-panel {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 56px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero {
+        text-align: center;
+    }
+    
+    .timeline:before {
+        left: 20px;
+    }
+    
+    .timeline-badge {
+        left: 20px;
+    }
+    
+    .timeline-panel {
+        width: calc(100% - 70px);
+    }
+}
